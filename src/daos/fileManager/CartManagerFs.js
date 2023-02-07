@@ -76,6 +76,6 @@ class CartManager {
   }
 }
 
-const productDao = new CartManager("carts.json","products.json");
+const cartDao = new CartManager("carts.json","products.json");
 
-export default productDao;
+export default cartDao;

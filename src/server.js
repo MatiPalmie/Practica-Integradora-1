@@ -5,6 +5,9 @@ import __dirname from "./dirname.js";
 import mongoose from "mongoose";
 import { allowInsecurePrototypeAccess } from '@handlebars/allow-prototype-access'
 const PORT = 8080;
+import productsRoutes from './routes/product.routes.js'
+import cartRoutes from './routes/cart.routes.js'
+
 const databaseConection = 'mongodb+srv://adminCoder:123456Coder@ecommerce.nprla1w.mongodb.net/?retryWrites=true&w=majority'
 const app = express();
 
@@ -33,5 +36,8 @@ app.use(express.static(`${__dirname}/public`));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+app.use('/',productsRoutes)
+
 
 app.listen(PORT, () => console.log(`Server Runing on Port ${PORT}`));

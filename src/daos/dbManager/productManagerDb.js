@@ -1,8 +1,8 @@
 import { productModel } from "../../models/products.models.js";
 
 class ProductDao {
-  async create(data) {
-    return await productModel(data);
+  async addProduct(data) {
+    return await productModel.create(data);
   }
   async getProducts() {
     return await productModel.find();
@@ -19,4 +19,4 @@ class ProductDao {
 }
 
 const productDao = new ProductDao();
-export default productDao;
+export default productDao
